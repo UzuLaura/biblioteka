@@ -28,11 +28,17 @@ header nav a:last-child {
     margin-right: 0;
 }
 .spinner {
-    background: red;
+    background: white;
     width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
+}
+.spinner img {
+    position: fixed;
+    top: 40vh;
+    left: 42vw;
+    width: 300px;
 }
 .content-box {
     margin-top: 20px;

@@ -1,3 +1,10 @@
+const spinner = document.createElement('span');
+document.body.append(spinner);
+spinner.classList.add('spinner');
+const spinnerImg = document.createElement('img');
+spinnerImg.src = "https://cdn.dribbble.com/users/959027/screenshots/2594575/oscar_data_loop__1_.gif";
+spinner.append(spinnerImg);
+
 function addToTable(book) {
     const table = document.querySelector('table tbody');
 
@@ -28,9 +35,7 @@ fetch("https://europe-west1-codeacademy-demo-f866c.cloudfunctions.net/books")
             addToTable(book);
         });
     })
+    .then(() => {
+        document.body.removeChild(spinner);
+    })
 
-    // function spinner () {
-    //     const spinner = document.createElement('span');
-    //     document.body.append(spinner);
-    //     div.classList.add('spinner');
-    // }
