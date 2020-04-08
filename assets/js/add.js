@@ -1,8 +1,6 @@
 function captcha () {
     const num1 = Math.floor(Math.random() * 20 +1);
     const num2 = Math.floor(Math.random() * 20 +1);
-    const sum = num1 + num2;
-    const captchaInput = document.getElementById('captcha');
     const captchaLabel = document.querySelector('label[for=captcha]');    
     captchaLabel.textContent += `${num1} + ${num2}`;    
     const form = document.querySelector('form');
@@ -16,7 +14,7 @@ function captcha () {
             author: e.target.elements.author.value
         }    
 
-        if (Number(captchaInput.value) == sum) {
+        if (Number(e.target.elements.captcha.value) == num1 + num2) {
             fetch('https://europe-west1-codeacademy-demo-f866c.cloudfunctions.net/books', {
                 method: 'POST',
                 headers: {
@@ -24,24 +22,18 @@ function captcha () {
                 },
                 body: JSON.stringify(book)
             }).then(() => {
-                console.log('viskas gerai');
                 notification.textContent = "Added successfully";
-                notification.classList.add('bg-success');
-                notification.classList.add('display');    
+                notification.classList.add('bg-success', 'display');
             }).catch((error) => {
-                console.log('kazkas negerai');
                 notification.textContent = error.message;
-                notification.classList.add('bg-success');
-                notification.classList.add('display');    
+                notification.classList.add('bg-success', 'display');
             })
         } else {
-            console.log('failed');
             notification.textContent = "Check your captcha";
             notification.classList.remove('bg-success');
             notification.classList.add('display');
         }    
     })
 }
-
 
 captcha();
