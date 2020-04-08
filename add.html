@@ -25,6 +25,40 @@
     <main>
         <div class="wrapper content-box">
             <h1>Padovanoti knygą</h1>
+            <form action="" name="gift" class="flex-box">
+                <div class="input-group">
+                    <label for="name">Knygos pavadinimas</label>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name"
+                        min-lenght="4"
+                        placeholder="Įveskite knygos pavadinimą"
+                        reguired >
+                </div>
+                <div class="input-group">
+                    <label for="author">Knygos autorius</label>
+                    <input 
+                        type="text" 
+                        name="author" 
+                        id="author"
+                        min-lenght="4"
+                        placeholder="Įveskite knygos autorių"
+                        reguired >
+                </div>
+                <div class="input-group">
+                    <label for="captcha">Suskaičiuokite: </label>
+                    <input 
+                        type="number" 
+                        name="captcha" 
+                        id="captcha"
+                        placeholder=""
+                        reguired >
+                </div>
+                <div class="input-group">
+                    <input type="submit" name="submit" value="Padovanoti knygą">
+                </div>
+            </form>
         </div>
     </main>
     <footer>

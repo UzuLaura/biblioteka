@@ -38,6 +38,16 @@ header nav a:last-child {
     box-shadow: 0 0 2px 1px rgb(173, 173, 173);
     border-radius: 5px;
 }
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.input-group {
+    width: 49%;
+    padding-bottom: 10px;
+}
 
 /* Footer */
 footer {
