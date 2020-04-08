@@ -105,4 +105,9 @@ footer {
     header nav a:first-child {
         padding-top: 5px;
     }
+    .spinner img {
+        width: 100px;
+        top: 45vh;
+        left: 35vw;    
+    }
 }
