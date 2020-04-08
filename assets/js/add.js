@@ -11,11 +11,29 @@ function captcha () {
     form.addEventListener('submit', e => {
         e.preventDefault();
 
+        const book = {
+            name: e.target.elements.name.value,
+            author: e.target.elements.author.value
+        }    
+
         if (Number(captchaInput.value) == sum) {
-            console.log('passed');
-            notification.textContent = "Added successfully";
-            notification.classList.add('bg-success');
-            notification.classList.add('display');
+            fetch('https://europe-west1-codeacademy-demo-f866c.cloudfunctions.net/books', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(book)
+            }).then(() => {
+                console.log('viskas gerai');
+                notification.textContent = "Added successfully";
+                notification.classList.add('bg-success');
+                notification.classList.add('display');    
+            }).catch((error) => {
+                console.log('kazkas negerai');
+                notification.textContent = error.message;
+                notification.classList.add('bg-success');
+                notification.classList.add('display');    
+            })
         } else {
             console.log('failed');
             notification.textContent = "Check your captcha";
