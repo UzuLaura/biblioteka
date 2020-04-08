@@ -48,7 +48,21 @@ header nav a:last-child {
     width: 49%;
     padding-bottom: 10px;
 }
-
+.notification {
+    width: 100%;
+    background-color: red;
+    display: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.display {
+    display: inline-block;
+}
+.bg-success {
+    background-color: green;
+}
 /* Footer */
 footer {
     text-align: center;
