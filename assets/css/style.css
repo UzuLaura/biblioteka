@@ -1,0 +1,46 @@
+.wrapper {
+    width: 1024px;
+    margin: 0 auto;
+}
+body {
+    background: lightgrey;
+}
+
+/* Navbar Style */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header {
+    background: white;
+    box-shadow: 0 0 2px 1px rgb(173, 173, 173);
+}
+header img {
+    width: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+header nav a {
+    color: black;
+    margin-right: 10px;
+}
+header nav a:last-child {
+    margin-right: 0;
+}
+
+/* Main Content */
+.content-box {
+    background: white;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0 0 2px 1px rgb(173, 173, 173);
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+}
