@@ -31,6 +31,13 @@ header nav a:last-child {
 }
 
 /* Main Content */
+.spinner {
+    background: red;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
 .content-box {
     background: white;
     margin-top: 20px;

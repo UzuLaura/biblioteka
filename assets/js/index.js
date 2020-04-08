@@ -14,3 +14,9 @@ fetch("https://europe-west1-codeacademy-demo-f866c.cloudfunctions.net/books")
             td2.textContent = book.author;
         });
     })
+
+    // function spinner () {
+    //     const spinner = document.createElement('span');
+    //     document.body.append(spinner);
+    //     div.classList.add('spinner');
+    // }
