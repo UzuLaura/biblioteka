@@ -3,13 +3,10 @@ const bookId = document.location.search.slice(1);
 firebase
     .firestore()
     .collection('books')
+    .doc(bookId)
     .get()
     .then((data) => {
-        data.forEach(book => {
-            if (book.id == bookId) {
-                bookInfo(book);
-            }
-        })
+        bookInfo(data);
     })
 
 function bookInfo(book) {
