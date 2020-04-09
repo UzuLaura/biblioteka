@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js" defer></script>
+    <script src="assets/js/firebase.js" defer></script>
     <script src="assets/js/add.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="wrapper navbar">
             <a href="index.html">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Lietuvos_nacionalin%C4%97s_Martyno_Ma%C5%BEvydo_bibliotekos_logotipas%2C_2016.png" alt="logo">
-            </a>            
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Lietuvos_nacionalin%C4%97s_Martyno_Ma%C5%BEvydo_bibliotekos_logotipas%2C_2016.png"
+                    alt="logo">
+            </a>
             <nav>
                 <a href="index.html">Knygų lentyna</a>
                 <a href="#">Padovanoti knygą</a>
-            </nav>        
+            </nav>
         </div>
     </header>
     <main>
@@ -29,32 +35,17 @@
             <form action="" name="gift" class="flex-box" method="POST">
                 <div class="input-group">
                     <label for="name">Knygos pavadinimas</label>
-                    <input 
-                        type="text" 
-                        name="name" 
-                        id="name"
-                        minlength="4"
-                        placeholder="Įveskite knygos pavadinimą"
-                        required >
+                    <input type="text" name="name" id="name" minlength="4" placeholder="Įveskite knygos pavadinimą"
+                        required>
                 </div>
                 <div class="input-group">
                     <label for="author">Knygos autorius</label>
-                    <input 
-                        type="text" 
-                        name="author" 
-                        id="author"
-                        minlength="4"
-                        placeholder="Įveskite knygos autorių"
-                        required >
+                    <input type="text" name="author" id="author" minlength="4" placeholder="Įveskite knygos autorių"
+                        required>
                 </div>
                 <div class="input-group">
                     <label for="captcha" id="captchaLabel">Suskaičiuokite: </label>
-                    <input 
-                        type="number" 
-                        name="captcha" 
-                        id="captcha"
-                        placeholder=""
-                        required >
+                    <input type="number" name="captcha" id="captcha" placeholder="" required>
                 </div>
                 <div class="input-group">
                     <input type="submit" name="submit" value="Padovanoti knygą">
@@ -66,4 +57,5 @@
         Copy &copy; 2020. All rights reserved.
     </footer>
 </body>
+
 </html>

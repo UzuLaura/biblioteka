@@ -11,31 +11,26 @@ function addToTable(book) {
     const tr = table.insertRow();
 
     const td1 = tr.insertCell();
-    td1.textContent = book.name;
+    td1.textContent = book.data().title;
 
-    const td2 = tr.insertCell();    
-    td2.textContent = book.author;
+    const td2 = tr.insertCell();
+    td2.textContent = book.data().author;
 
-    const td3 = tr.insertCell();    
+    const td3 = tr.insertCell();
     const link = document.createElement('a');
     link.href = `view.html?${book.id}`;
     link.textContent = 'View';
     td3.append(link);
 }
 
-fetch("https://europe-west1-codeacademy-demo-f866c.cloudfunctions.net/books")
-    .then((data) => data.json())
-    .then((data) => {
-        data.forEach((item) => {
-            const book = {
-                name: item.name,
-                author: item.author,
-                id: item.id
-            }
-            addToTable(book);
-        });
-    })
-    .then(() => {
-        document.body.removeChild(spinner);
-    })
+firebase
+    .firestore()
+    .collection('books')
+    .get()
+    .then((snapshot) => snapshot.docs
+        .forEach(doc => {
+            addToTable(doc);
+        })
+    )
+    .then(() => document.body.removeChild(spinner));
 

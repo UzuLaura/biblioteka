@@ -1,19 +1,21 @@
 const bookId = document.location.search.slice(1);
 
-fetch(`https://europe-west1-codeacademy-demo-f866c.cloudfunctions.net/books/${bookId}`)
-    .then((response) => response.json())
+firebase
+    .firestore()
+    .collection('books')
+    .get()
     .then((data) => {
-        let book = {
-            name: data.name,
-            author: data.author
-        }
-        bookInfo(book);
+        data.forEach(book => {
+            if (book.id == bookId) {
+                bookInfo(book);
+            }
+        })
     })
 
-    function bookInfo (book) {
-        const h1 = document.querySelector('h1');
-        h1.textContent = book.name;
+function bookInfo(book) {
+    const h1 = document.querySelector('h1');
+    h1.textContent = book.data().title;
 
-        const h2 = document.querySelector('h2');
-        h2.textContent = `Autorius: ${book.author}`;
-    }
+    const h2 = document.querySelector('h2');
+    h2.textContent = `Autorius: ${book.data().author}`;
+}
